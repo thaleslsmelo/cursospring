@@ -13,7 +13,7 @@ import com.aulaspringweb.curso.entities.Category;
 import com.aulaspringweb.curso.services.CategoryService;
 
 @RestController
-@RequestMapping(value = "/Categorys")
+@RequestMapping(value = "/categorys")
 public class CategoryResource {
 	
 	

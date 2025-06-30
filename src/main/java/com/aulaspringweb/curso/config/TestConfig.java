@@ -70,7 +70,6 @@ public class TestConfig implements CommandLineRunner{
 		Product p5 = new Product(null, "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
 
 		
-		
 		userRepository.saveAll(Arrays.asList(u1, u2, u3, u4, u5, u6, u7, u8, u9, u10, u11, u12, u13, u14, u15, u16));
 		
 		orderRepository.saveAll(Arrays.asList(o1,o2,o3));
@@ -78,6 +77,16 @@ public class TestConfig implements CommandLineRunner{
 		categoryRepository.saveAll(Arrays.asList(cat1,cat2,cat3));
 		
 		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
+		p1.getCategorys().add(cat2);
+		p2.getCategorys().add(cat1);
+		p2.getCategorys().add(cat3);
+		p3.getCategorys().add(cat3);
+		p4.getCategorys().add(cat3);
+		p5.getCategorys().add(cat2);
+		
+		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 	}
+	
 
 }
