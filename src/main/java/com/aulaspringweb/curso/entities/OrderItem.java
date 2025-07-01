@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import com.aulaspringweb.curso.entities.pk.OrderItemPK;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +18,8 @@ public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@EmbeddedId
-	private OrderItemPK id;
+	private OrderItemPK id = new OrderItemPK();
+	
 	private Integer quantity;
 	private Double price;
 	
@@ -34,6 +37,7 @@ public class OrderItem implements Serializable {
 		= price;
 	}
 
+	@JsonIgnore
 	public Order getOrder() {
 	 return id.getOrder();
 	}
