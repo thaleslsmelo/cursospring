@@ -36,11 +36,8 @@ public class TestConfig implements CommandLineRunner{
 	@Autowired
 	private ProductRepository productRepository;
 	
-	
 	@Autowired
 	private OrderItemRepository orderitemRepository;
-	
-
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -90,7 +87,6 @@ public class TestConfig implements CommandLineRunner{
 		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.PAID, u1); 
 		
 		
-		
 	
 		userRepository.saveAll(Arrays.asList(u1, u2, u3, u4, u5, u6, u7, u8, u9, u10, u11, u12, u13, u14, u15, u16));	
 		orderRepository.saveAll(Arrays.asList(o1,o2,o3));
@@ -102,9 +98,7 @@ public class TestConfig implements CommandLineRunner{
 		OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPreco());
 		
 		orderitemRepository.saveAll(Arrays.asList(oi1,oi2,oi3,oi4));
-		
 
-		
 	}
 	
 

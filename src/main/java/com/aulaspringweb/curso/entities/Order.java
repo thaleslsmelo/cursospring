@@ -6,8 +6,6 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-
-
 import com.aulaspringweb.curso.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -42,6 +40,10 @@ public class Order implements Serializable{
 	@OneToMany(mappedBy = "id.order")
 	private Set<OrderItem> items = new HashSet<>();
 	
+	
+	
+	@OneToMany(mappedBy = "id.order")
+	private Set<OrderItem> itens = new HashSet<>();
 	
 	public Order() {
 		
@@ -86,6 +88,10 @@ public class Order implements Serializable{
 
 	public void setMoment(Instant moment) {
 		this.moment = moment;
+	}
+	 
+	public Set<OrderItem> geItems(){
+		return itens;
 	}
 	
 
